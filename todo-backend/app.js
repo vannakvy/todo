@@ -46,11 +46,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // sets default route
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Welcome to TODO Node.js application backend." });
+  res
+    .status(200)
+    .json({ message: "Welcome to TODO Node.js application backend." });
 });
 
 // todos api routes
-app.use(process.env.APP_API_PREFIX, todos);
+app.use("/api/v1", todos);
 
 // 404 - not found error handler
 app.use(notFoundRoute);
@@ -60,5 +62,7 @@ app.use(errorHandler);
 
 // app listens to defined port
 app.listen(process.env.APP_PORT, () => {
-  console.log("TODO-App backend server running on: " + process.env.APP_BASE_URL);
+  console.log(
+    "TODO-App backend server running on: " + process.env.APP_BASE_URL
+  );
 });
