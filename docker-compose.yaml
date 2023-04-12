@@ -15,7 +15,7 @@ services:
     depends_on:
       - mongodb
   frontend:
-    build: ./todo-fronend
+    build: ./todo-frontend
     ports:
       - "80:80"
     stdin_open: true
