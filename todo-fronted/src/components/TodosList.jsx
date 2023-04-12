@@ -23,10 +23,10 @@ const TodosList = () => {
       {error && <h2 className="text-red-500 text-2xl font-bold my-2">Error: {error.message}</h2>}
 
       {/* Todos List */}
-      {todos.length === 0 ? (
+      {todos?.length === 0 ? (
         <h2 className="text-black text-2xl font-bold my-2">Sorry! No Todos Found.</h2>
       ) : (
-        todos.todos.map((todo, index) => (
+        todos?.todos?.map((todo, index) => (
           <div key={index} className="bg-gray-100 w-full rounded-sm shadow-md p-5 my-2 transition-all duration-100 hover:shadow-lg">
             <h2 className="text-black text-2xl font-bold my-2">
               <span className="text-blue-500 font-bold">Title: </span>
