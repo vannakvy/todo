@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import REACT_APP_API_BASE_URL from '../url'
 
 const EditTodoForm = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const EditTodoForm = () => {
       navigate("/");
     } else {
       axios
-        .get(process.env.REACT_APP_API_BASE_URL + "/api/v1/todo/" + searchParams.get("id"))
+        .get(REACT_APP_API_BASE_URL + "/api/v1/todo/" + searchParams.get("id"))
         .then((res) => {
           setTodoTitle(res.data.todo.title);
           setTodoDescription(res.data.todo.description);
@@ -41,7 +42,7 @@ const EditTodoForm = () => {
     // if validation is ok, then add new todo
     if (todoTitle && todoDescription) {
       axios
-        .put(process.env.REACT_APP_API_BASE_URL + "/api/v1/todo/" + searchParams.get("id"), {
+        .put(REACT_APP_API_BASE_URL + "/api/v1/todo/" + searchParams.get("id"), {
           title: todoTitle,
           description: todoDescription,
           completed: todoCompleted,

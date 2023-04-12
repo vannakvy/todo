@@ -61,8 +61,8 @@ app.use(notFoundRoute);
 app.use(errorHandler);
 
 // app listens to defined port
-app.listen(process.env.APP_PORT, () => {
+app.listen(process.env.APP_PORT || 5000, () => {
   console.log(
-    "TODO-App backend server running on: " + process.env.APP_BASE_URL
+    "TODO-App backend server running on: port 5000"
   );
 });
