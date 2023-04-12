@@ -4,8 +4,8 @@
   "description": "todo-app-backend development with node.js, express.js & mongoDB",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "prod": "node app.js",
+    "dev": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
